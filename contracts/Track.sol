@@ -1,0 +1,66 @@
+pragma solidity ^0.5.0;
+
+
+
+
+contract SupplyChain {
+
+
+
+   address add1= 0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c;
+   address add2= 0x14723A09ACff6D2A60DcdF7aA4AFf308FDDC160C;
+   address add3= 0x4B0897b0513fdC7C541B6d9D7E929C4e5364D2dB;
+   address add4= 0x583031D1113aD414F02576BD6afaBfb302140225;
+
+
+int public counter=0;
+
+
+
+  function forSale () public {
+
+    require(msg.sender==add1);
+
+     counter+=1;
+   }
+
+
+  function sold () public{
+      require(msg.sender==add2);
+
+     counter+=1;
+
+  }
+
+
+
+
+
+  function shipped () public{
+
+   require(msg.sender==add3);
+
+     counter+=1;
+
+  }
+
+
+
+
+  function receive () public{
+
+   require(msg.sender==add4);
+
+     counter+=1;
+
+  }
+
+
+
+   function display() view public returns(int){
+       return counter;
+   }
+
+
+
+}
